@@ -89,8 +89,9 @@ Type exit to quit.
 ```
 
 🧪 Evaluation
-Retrieval and generation quality are evaluated using RAGAS.
-Scores and datasets are available in RAGAS-dataset/.
+
+-Retrieval and generation quality are evaluated using RAGAS.
+-Scores and datasets are available in RAGAS-dataset/.
 
 👤 Author
 Rishabh Pawar
