@@ -49,19 +49,20 @@ This project fixes that.
 ## 📂 Project Structure
 
 RAG-based-Legal-Assistant/
-├── data/ # Legal PDFs
-├── modules/ # Core RAG logic
-│ ├── bm25_retriever.py
-│ ├── semantic_retriever.py
-│ ├── multi_query_retriever.py
-│ ├── multi_hop_retriever.py
-│ ├── rrf_score.py
-│ ├── conversation_history.py
-│ └── chatbot_response.py
-├── prompts/
-├── RAGAS-dataset/
-├── app.py
+├── data/                     # Legal PDF documents
+├── modules/                  # Core RAG pipeline logic
+│   ├── bm25_retriever.py     # Sparse keyword-based retrieval
+│   ├── semantic_retriever.py # Dense vector retrieval (FAISS)
+│   ├── multi_query_retriever.py
+│   ├── multi_hop_retriever.py
+│   ├── rrf_score.py          # Reciprocal Rank Fusion logic
+│   ├── conversation_history.py
+│   └── chatbot_response.py
+├── prompts/                  # Prompt templates
+├── RAGAS-dataset/            # Evaluation datasets & scores
+├── app.py                    # Application entry point
 └── README.md
+
 
 
 ---
@@ -91,6 +92,7 @@ Type exit to quit.
 🧪 Evaluation
 
 -Retrieval and generation quality are evaluated using RAGAS.
+
 -Scores and datasets are available in RAGAS-dataset/.
 
 👤 Author
