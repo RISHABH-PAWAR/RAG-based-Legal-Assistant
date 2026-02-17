@@ -23,7 +23,7 @@
 import React from "react";
 import StrategyBadge     from "./StrategyBadge.jsx";
 import SourceCard        from "./SourceCard.jsx";
-import ReasoningSection  from "./ReasoningSection.jsx";
+import ReasoningSection  from "./Reasoningsection.jsx";
 
 // Blinking cursor shown while streaming
 function Cursor() {
