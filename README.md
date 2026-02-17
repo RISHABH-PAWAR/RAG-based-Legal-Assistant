@@ -98,23 +98,76 @@ RAG-based-Legal-Assistant/
 ## ⚙️ Setup
 
 ### Requirements
-```bash
-python >= 3.12
-Installation (Recommended)
+
+1️⃣ Clone Repository
+```
 git clone https://github.com/RISHABH-PAWAR/RAG-based-Legal-Assistant.git
 cd RAG-based-Legal-Assistant
+```
+
+2️⃣ Create Virtual Environment
+```
+Using uv (Recommended)
+pip install uv
+uv venv
 uv sync
 
-🔐 Environment Variables
-Create a .env file:
+OR Using venv
+python -m venv venv
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # macOS/Linux
 
-COHERE_API_KEY=your_api_key
-OPENAI_API_KEY=optional
+pip install -r requirements.txt
+```
 
-▶️ Run the App
-uv run app.py
-Ask legal questions in the terminal.
+3️⃣ Environment Variables
+```
+Create a .env file in the root directory:
+
+COHERE_API_KEY=your_cohere_api_key
+OPENAI_API_KEY=optional_if_used
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_API_KEY=optional_langsmith_key
+```
+
+4️⃣ Ingest Documents
+
+Place legal PDFs inside:
+```
+data/raw/
+```
+Run preprocessing (if required):
+```
+python modules/preprocess_documents.py
+```
+
+This will:
+
+Chunk documents
+
+Generate embeddings
+
+Store FAISS index inside data/vectors/
+
+5️⃣ Run CLI Version
+```
+python app.py
+```
+
+Type your legal query.
+
 Type exit to quit.
+
+6️⃣ Run Backend (API Mode)
+```
+cd backend
+uvicorn main:app --reload
+```
+7️⃣ Run Frontend
+```
+cd frontend
+npm install
+npm run dev
 ```
 
 ## How It Works
