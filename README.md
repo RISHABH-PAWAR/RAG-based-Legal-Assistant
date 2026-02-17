@@ -50,18 +50,37 @@ This project fixes that.
 
 ```text
 RAG-based-Legal-Assistant/
-├── data/                     # Legal PDF documents
-├── modules/                  # Core RAG pipeline logic
-│   ├── bm25_retriever.py     # Sparse keyword-based retrieval
-│   ├── semantic_retriever.py # Dense vector retrieval (FAISS)
+├── backend/                     # FastAPI backend
+│   ├── main.py                 # API endpoints
+│   └── rag_service.py          # RAG service logic
+├── frontend/                    # React + Vite frontend
+│   ├── src/
+│   │   ├── components/         # UI components
+│   │   ├── pages/             # Page components
+│   │   ├── api/               # API client
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+├── data/                       # Legal PDF documents & vectors
+│   ├── raw/                    # Source PDF files
+│   └── vectors/                # FAISS index & embeddings
+├── modules/                    # Core RAG pipeline logic
+│   ├── bm25_retriever.py      # Sparse keyword-based retrieval
+│   ├── semantic_retriever.py   # Dense vector retrieval (FAISS)
 │   ├── multi_query_retriever.py
 │   ├── multi_hop_retriever.py
-│   ├── rrf_score.py          # Reciprocal Rank Fusion logic
+│   ├── rrf_score.py           # Reciprocal Rank Fusion logic
+│   ├── decide_query_complexity.py
+│   ├── preprocess_documents.py
 │   ├── conversation_history.py
 │   └── chatbot_response.py
-├── prompts/                  # Prompt templates
-├── RAGAS-dataset/            # Evaluation datasets & scores
-├── app.py                    # Application entry point
+├── prompts/                    # Prompt templates
+├── outputs/                    # Demo outputs
+├── RAGAS-dataset/              # Evaluation datasets & scores
+├── app.py                      # CLI application entry point
+├── requirements.txt            # Python dependencies
 └── README.md
 ```
 
